@@ -6,3 +6,4 @@
 using namespace std;
 
 vector <string> rF ()
+string rC(int)

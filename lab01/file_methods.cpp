@@ -13,3 +13,15 @@ vector <string> rF ()
 	input.close();
 	return G;
 }
+
+string rC(int num)
+{
+	vector <string> f = rF();
+	string Country;
+	string line = f[num];
+	for (int i= 0; isalpha(line[i]); i++)
+	{
+		Country = Country + line[i];
+	}
+	return Country;
+}
