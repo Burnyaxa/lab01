@@ -22,3 +22,20 @@ void print(vector <string> countries, vector<int> points, int size){
 	}
 	cout << endl;
 }
+
+void sortByScore(vector <string> &countries, vector<int> &points, int size){
+	string tempC;
+	int tempP;
+	for (int i = 0; i < size - 1; i++) {
+		for (int j = 0; j < size - i - 1; j++) {
+			if (points[j] < points[j + 1]) {
+				tempP = points[j];
+				tempC = countries[j];
+				points[j] = points[j + 1];
+				countries[j] = countries[j + 1];
+				points[j + 1] = tempP;
+				countries[j + 1] = tempC;
+			}
+		}
+	}
+}
