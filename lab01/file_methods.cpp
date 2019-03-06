@@ -3,16 +3,23 @@
 vector <string> rF()//return file in vector <string>
 {
 	ifstream input("eurovision.csv");
+<<<<<<< HEAD
 	string countryCounter, g;
 	input >> countryCounter;
 	int size = stoi(countryCounter, 0);
+=======
+	int size = getSize();
+	string g;
+>>>>>>> dev2
 	vector <string> G;
 	for (int i = 0; i < size; i++)
 	{
 		string f;
+		
 		bool alpha = 0, digit = 0;
 		while (!(alpha&&digit)) {
 			input >> g;
+<<<<<<< HEAD
 
 			f += g;
 			f += " ";
@@ -22,9 +29,21 @@ vector <string> rF()//return file in vector <string>
 				if (isalpha(g[i])) { alpha = true; }
 				if (isdigit(g[i])) { digit = true; }
 				if (alpha&&digit) { break; }
+=======
+			if (isalpha(g[1])) {
+				f += g;
+				f += " ";
+				g = f;
+				for (int i = 0; i < g.size(); i++)
+				{
+					if (isalpha(g[i])) { alpha = true; }
+					if (isdigit(g[i])) { digit = true; }
+					if (alpha&&digit) { break; }
+				}
+				f = g;
+				
+>>>>>>> dev2
 			}
-			f = g;
-
 		}
 		G.push_back(g);
 	}
@@ -37,7 +56,11 @@ string rC(int num)
 	vector <string> f = rF();
 	string Country;
 	string line = f[num];
+<<<<<<< HEAD
 	for (int i = 0; ((isalpha(line[i])) || (isspace(line[i]))); i++)
+=======
+	for (int i= 0; ((isalpha(line[i]))||(isspace(line[i]))); i++)
+>>>>>>> dev2
 	{
 		Country = Country + line[i];
 	}
