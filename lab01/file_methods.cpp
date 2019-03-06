@@ -1,10 +1,11 @@
+#include "file_methods.h"
+
 vector <string> rF ()//return file in vector <string>
 {
 	ifstream input("eurovision.csv");
-	string g, costyl;
+	int size = getSize();
+	string g;
 	vector <string> G;
-	input >> costyl;
-	int size = stoi(costyl, 0);
 	for (int i = 0; i < size; i++)
 	{
 		input >> g;
@@ -19,7 +20,7 @@ string rC(int num)//return Country,  from 0 to 19
 	vector <string> f = rF();
 	string Country;
 	string line = f[num];
-	for (int i= 0; isalpha(line[i]); i++)
+	for (int i = 0; isalpha(line[i]); i++)
 	{
 		Country = Country + line[i];
 	}
@@ -43,4 +44,13 @@ int rSum(int num)//return Sum,  from 0 to 19
 		else{ temp.erase(0, 1); }
 	}
 	return sum;
+}
+
+int getSize(){
+	ifstream input("eurovision.csv");
+	string countryCounter;
+	input >> countryCounter;
+	int size = stoi(countryCounter);
+	input.close();
+	return size;
 }
