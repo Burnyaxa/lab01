@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include "file_methods.h"
 
 vector <string> rF ()//return file in vector <string>
@@ -7,18 +6,10 @@ vector <string> rF ()//return file in vector <string>
 	int size = getSize();
 	string g;
 	vector <string> G;
-=======
-vector <string> rF ()
-{
-	ifstream input("eurovision.csv");
-	string g, countryCounter;
-	vector <string> G;
-	input >> countryCounter;
-	int size = stoi(countryCounter, 0);
->>>>>>> dev2
 	for (int i = 0; i < size; i++)
 	{
 		string f;
+		
 		bool alpha = 0, digit = 0;
 		while (!(alpha&&digit)) {
 			input >> g;
@@ -33,6 +24,7 @@ vector <string> rF ()
 					if (alpha&&digit) { break; }
 				}
 				f = g;
+				
 			}
 		}
 		G.push_back(g);
@@ -46,11 +38,7 @@ string rC(int num)
 	vector <string> f = rF();
 	string Country;
 	string line = f[num];
-<<<<<<< HEAD
-	for (int i = 0; isalpha(line[i]); i++)
-=======
 	for (int i= 0; ((isalpha(line[i]))||(isspace(line[i]))); i++)
->>>>>>> dev2
 	{
 		Country = Country + line[i];
 	}
