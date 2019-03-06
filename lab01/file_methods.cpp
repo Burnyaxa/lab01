@@ -66,6 +66,17 @@ int rSum(int num)
 	return sum;
 }
 
+void getResultFile(vector <string> countries, vector <int> points, int size){
+	ofstream out;
+	out.open("results.csv");
+	if (out.is_open()){
+		for (int i = 0; i < size; i++){
+			out << countries[i] << "," << points[i] << endl;
+		}
+	}
+	out.close();
+}
+
 int getSize(){
 	ifstream input("eurovision.csv");
 	string countryCounter;
