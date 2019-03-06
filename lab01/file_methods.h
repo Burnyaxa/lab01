@@ -9,3 +9,4 @@ vector <string> rF();
 string rC(int);
 int rSum(int);
 int getSize();
+int getNum(int , int )

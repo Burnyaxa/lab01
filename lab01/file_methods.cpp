@@ -66,6 +66,31 @@ int rSum(int num)
 	return sum;
 }
 
+int getNum(int kx, int ky)
+{
+	int size = getSize(), k = 0;
+	kx++; //ky++;
+	vector <string> f = rF();;
+	string temp = f[ky];
+	while (!temp.empty())
+	{
+		if (isdigit(temp[0]))
+		{
+			if (k = kx)
+			{
+				int digit = stoi(temp);
+				return digit;
+			}
+			while (isdigit(temp[0]))
+			{
+				temp.erase(0, 1);
+			}
+			k++;
+		}
+		else { temp.erase(0, 1); }
+	}
+}
+
 int getSize(){
 	ifstream input("eurovision.csv");
 	string countryCounter;
