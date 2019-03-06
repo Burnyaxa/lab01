@@ -1,32 +1,49 @@
-vector <string> rF ()//return file in vector <string>
+vector <string> rF ()
 {
 	ifstream input("eurovision.csv");
-	string g, costyl;
+	string g, countryCounter;
 	vector <string> G;
-	input >> costyl;
-	int size = stoi(costyl, 0);
+	input >> countryCounter;
+	int size = stoi(countryCounter, 0);
 	for (int i = 0; i < size; i++)
 	{
-		input >> g;
+		string f;
+		bool alpha = 0, digit = 0;
+		while (!(alpha&&digit)) {
+			input >> g;
+
+			f += g;
+			f += " ";
+			g = f;
+			for (int i = 0; i < g.size(); i++)
+			{
+				if (isalpha(g[i])) { alpha = true;}
+				if (isdigit(g[i])) { digit = true; }
+				if (alpha&&digit) { break; }
+			}
+			f = g;
+
+		}
 		G.push_back(g);
 	}
 	input.close();
 	return G;
 }
 
-string rC(int num)//return Country,  from 0 to 19
+string rC(int num)
 {
 	vector <string> f = rF();
 	string Country;
 	string line = f[num];
-	for (int i= 0; isalpha(line[i]); i++)
+	for (int i= 0; ((isalpha(line[i]))||(isspace(line[i]))); i++)
 	{
 		Country = Country + line[i];
 	}
+
 	return Country;
 }
 
-int rSum(int num)//return Sum,  from 0 to 19
+int rSum(int num)
 {
 	int sum = 0;
 	vector <string> f = rF();
