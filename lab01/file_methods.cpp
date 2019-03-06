@@ -11,18 +11,18 @@ vector <string> rF ()
 		bool alpha = 0, digit = 0;
 		while (!(alpha&&digit)) {
 			input >> g;
-
-			f += g;
-			f += " ";
-			g = f;
-			for (int i = 0; i < g.size(); i++)
-			{
-				if (isalpha(g[i])) { alpha = true;}
-				if (isdigit(g[i])) { digit = true; }
-				if (alpha&&digit) { break; }
+			if (isalpha(g[1])) {
+				f += g;
+				f += " ";
+				g = f;
+				for (int i = 0; i < g.size(); i++)
+				{
+					if (isalpha(g[i])) { alpha = true; }
+					if (isdigit(g[i])) { digit = true; }
+					if (alpha&&digit) { break; }
+				}
+				f = g;
 			}
-			f = g;
-
 		}
 		G.push_back(g);
 	}
