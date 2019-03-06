@@ -39,3 +39,14 @@ void sortByScore(vector <string> &countries, vector<int> &points, int size){
 		}
 	}
 }
+
+void getFinalScore(vector <int> &points, int size){
+	int score = 12;
+	for (int i = 0; i < 10; i++){
+		points[i] = score;
+		if (i < 2) score -= 2;
+		else score -= 1;
+	}
+}
+
+
