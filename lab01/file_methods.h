@@ -10,3 +10,4 @@ string rC(int);
 int rSum(int);
 void getResultFile(vector <string>, vector <int>, int);
 int getSize();
+int getNum(int , int )

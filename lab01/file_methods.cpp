@@ -3,6 +3,7 @@
 vector <string> rF()//return file in vector <string>
 {
 	ifstream input("eurovision.csv");
+
 	int size = getSize();
 	string g;
 	vector <string> G;
@@ -38,7 +39,9 @@ string rC(int num)
 	vector <string> f = rF();
 	string Country;
 	string line = f[num];
+
 	for (int i = 0; ((isalpha(line[i])) || (isspace(line[i]))); i++)
+
 	{
 		Country = Country + line[i];
 	}
@@ -67,15 +70,29 @@ int rSum(int num)
 	return sum;
 }
 
-void getResultFile(vector <string> countries, vector <int> points, int size){
-	ofstream out;
-	out.open("results.csv");
-	if (out.is_open()){
-		for (int i = 0; i < size; i++){
-			out << countries[i] << "," << points[i] << endl;
+int getNum(int kx, int ky)
+{
+	int size = getSize(), k = 0;
+	kx++; //ky++;
+	vector <string> f = rF();;
+	string temp = f[ky];
+	while (!temp.empty())
+	{
+		if (isdigit(temp[0]))
+		{
+			if (k = kx)
+			{
+				int digit = stoi(temp);
+				return digit;
+			}
+			while (isdigit(temp[0]))
+			{
+				temp.erase(0, 1);
+			}
+			k++;
 		}
+		else { temp.erase(0, 1); }
 	}
-	out.close();
 }
 
 int getSize(){
