@@ -73,14 +73,13 @@ int rSum(int num)
 int getNum(int kx, int ky)
 {
 	int size = getSize(), k = 0;
-	kx++; //ky++;
 	vector <string> f = rF();;
-	string temp = f[ky];
+	string temp = f[kx];
 	while (!temp.empty())
 	{
 		if (isdigit(temp[0]))
 		{
-			if (k = kx)
+			if (k = ky)
 			{
 				int digit = stoi(temp);
 				return digit;
