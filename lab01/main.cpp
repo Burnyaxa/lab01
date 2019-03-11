@@ -3,13 +3,12 @@
 
 void main(){
 	int size = getSize();
-	vector<string> countries = getCountries(size);
-	vector<int> points = getPoints(size);
-	sortByScore(countries, points, size);
-	print(countries, points, size);
-	getFinalScore(points, 10);
-	cout << "Final score : " << endl;
-	print(countries, points, 10);
-	getResultFile(countries,points, 10);
+	vector <string> countries = getCountries(size);
+	vector <vector<int>> votes = getVotes(size);
+	getFinalScore(votes, size);
+	vector<int> result = sumRow(votes, size);
+	sortByScore(countries, result, size);
+	print(countries, result, size);
+	getResultFile(countries, result, 10);
 	system("pause");
 }

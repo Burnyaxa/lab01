@@ -11,3 +11,4 @@ int rSum(int);
 void getResultFile(vector <string>, vector <int>, int);
 int getSize();
 int getNum(int, int);
+void getResultFile(vector <string> countries, vector <int> points, int size);

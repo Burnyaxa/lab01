@@ -103,3 +103,15 @@ int getSize(){
 	input.close();
 	return size;
 }
+
+void getResultFile(vector <string> countries, vector <int> points, int size){
+	ofstream out;
+	out.open("results.csv");
+	if (out.is_open()){
+		for (int i = 0; i < size; i++){
+			out << countries[i] << "," << points[i] << endl;
+		}
+	}
+	out.close();
+}
+
