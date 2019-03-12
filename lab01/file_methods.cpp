@@ -72,7 +72,7 @@ int rSum(int num)
 
 int getNum(int kx, int ky)
 {
-	int size = getSize(), k = 0;
+	int k = 0;
 	vector <string> f = rF();;
 	string temp = f[ky];
 	while (!temp.empty())
