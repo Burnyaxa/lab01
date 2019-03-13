@@ -79,7 +79,7 @@ int getNum(int kx, int ky)
 	{
 		if (isdigit(temp[0]))
 		{
-			if (k = ky)
+			if (k == kx)
 			{
 				int digit = stoi(temp);
 				return digit;
@@ -92,6 +92,7 @@ int getNum(int kx, int ky)
 		}
 		else { temp.erase(0, 1); }
 	}
+	return NAN;
 }
 
 int getSize(){
