@@ -115,3 +115,13 @@ void getResultFile(vector <string> countries, vector <int> points, int size){
 	out.close();
 }
 
+vector <int> cmdInput(int argc, char*argv[])
+{
+	vector <int> ar;
+	for (int i = 1; i < argc; i++)
+	{
+		ar.push_back(atoi(argv[i]));
+	}
+
+	return ar;
+}

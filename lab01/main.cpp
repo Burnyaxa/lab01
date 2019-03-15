@@ -1,7 +1,11 @@
 #include "file_methods.h"
 #include "country.h"
 
-void main(){
+// [3,6,7,8]
+// struct Country {name, int[]}
+
+void main(int argc, char* argv[])
+{
 	int size = getSize();
 	vector <string> countries = getCountries(size);
 	vector <vector<int>> votes = getVotes(size);
