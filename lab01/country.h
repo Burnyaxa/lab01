@@ -5,10 +5,24 @@
 #include <string>
 using namespace std;
 
-vector <string> getCountries(int size);
-void print(vector <string> countries, vector<int> points, int size);
-void sortByScore(vector <string> &countries, vector<int> &points, int size);
-vector <vector<int>> getVotes(int size);
-void getFinalScore(vector <vector<int>> &votes, int size);
-int getMaxIndex(vector <vector<int>> &votes, int size, int column);
-vector<int> sumRow(vector <vector<int>> votes, int size);
+struct country{
+	int *votes;
+	int score;
+	string name;
+
+	country(string name, int *votes, int size){
+		this->votes = new int[size];
+		this->name = name;
+		for (int i = 0; i < size; i++){
+			this->votes[i] = votes[i];
+		}
+	}
+};
+
+void getCountries(vector <country> &data, int size);
+void print(vector <country> data, int size);
+void sortByScore(vector <country> &data, int size);
+void getVotesRating(vector <country> &data, int size);
+int getMaxIndex(vector<country> data, int size, int column);
+void getScore(vector <country> &data, int size);
+

@@ -3,12 +3,13 @@
 
 void main(){
 	int size = getSize();
-	vector <string> countries = getCountries(size);
-	vector <vector<int>> votes = getVotes(size);
-	getFinalScore(votes, size);
-	vector<int> result = sumRow(votes, size);
-	sortByScore(countries, result, size);
-	print(countries, result, size);
-	getResultFile(countries, result, 10);
+	
+	vector <country> dataBase;
+	getCountries(dataBase, size);
+	getVotesRating(dataBase, size);
+	getScore(dataBase, size);
+	sortByScore(dataBase, size);
+	print(dataBase, size);
+	getResultFile(dataBase, 10);
 	system("pause");
 }

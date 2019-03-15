@@ -1,4 +1,5 @@
 #include "file_methods.h"
+#include "country.h"
 
 vector <string> rF()//return file in vector <string>
 {
@@ -104,14 +105,16 @@ int getSize(){
 	return size;
 }
 
-void getResultFile(vector <string> countries, vector <int> points, int size){
+void getResultFile(vector <country> data, int size){
 	ofstream out;
 	out.open("results.csv");
 	if (out.is_open()){
 		for (int i = 0; i < size; i++){
-			out << countries[i] << "," << points[i] << endl;
+			out << data[i].name << "," << data[i].score << endl;
 		}
 	}
 	out.close();
 }
+
+
 
