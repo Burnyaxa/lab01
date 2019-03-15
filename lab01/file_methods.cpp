@@ -103,3 +103,14 @@ int getSize(){
 	input.close();
 	return size;
 }
+
+vector <int> cmdInput(int argc, char*argv[])
+{
+	vector <int> ar;
+	for (int i = 1; i < argc; i++)
+	{
+		ar.push_back(atoi(argv[i]));
+	}
+
+	return ar;
+}
