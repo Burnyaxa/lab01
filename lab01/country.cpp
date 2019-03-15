@@ -26,16 +26,13 @@ void sortByScore(vector <country> &data,int size){
 }
 
 
-void getVotesRating(vector <country> &data, int size){
+void getVotesRating(vector <country> &data, int size, vector <int> rate){
 	for (int i = 0; i < size; i++){
-		int score = 12;
-		for (int count = 1; count <= 10; count++){
-			data[getMaxIndex(data, size, i)].votes[i] = score;
-			if (count < 3) score -= 2;
-			else score--;
+		for (int v = 0; v < rate.size(); v++){
+			data[getMaxIndex(data, size, i)].votes[i] = rate[v];
 		}
 		for (int j = 0; j < size; j++){
-			if (data[j].votes[i] > 12) data[j].votes[i] = 0;
+			if (data[j].votes[i] > rate[0]) data[j].votes[i] = 0;
 		}
 	}
 }
@@ -72,6 +69,19 @@ void getCountries(vector <country> &data, int size){
 			votes[j] = getNum(j, i);
 		}
 		data.push_back(country(name, votes, size));
+	}
+}
+
+void sortVector(vector <int> &rate){
+	int temp;
+	for (int i = 0; i < rate.size() - 1; i++){
+		for (int j = 0; j < rate.size() - i - 1; j++){
+			if (rate[j] < rate[j + 1]){
+				temp = rate[j];
+				rate[j] = rate[j + 1];
+				rate[j + 1] = temp;
+			}
+		}
 	}
 }
 

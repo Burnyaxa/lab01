@@ -12,3 +12,5 @@ int rSum(int);
 int getSize();
 int getNum(int, int);
 void getResultFile(vector <country> data, int size);
+vector <int> cmdInput(int , char*[]);
+

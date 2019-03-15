@@ -22,7 +22,8 @@ struct country{
 void getCountries(vector <country> &data, int size);
 void print(vector <country> data, int size);
 void sortByScore(vector <country> &data, int size);
-void getVotesRating(vector <country> &data, int size);
+void getVotesRating(vector <country> &data, int size, vector <int> rate);
 int getMaxIndex(vector<country> data, int size, int column);
 void getScore(vector <country> &data, int size);
+void sortVector(vector <int> &rate);
 
